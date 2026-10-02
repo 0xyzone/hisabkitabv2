@@ -19,6 +19,7 @@ class ItemsTable
             ->columns([
                 ImageColumn::make('image')
                     ->label('Image')
+                    ->imageGallery()
                     ->disk('public')
                     ->square()
                     ->size(50),
