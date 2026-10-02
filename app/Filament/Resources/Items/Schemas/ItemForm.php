@@ -6,6 +6,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class ItemForm
@@ -14,11 +15,37 @@ class ItemForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->label('Item Name')
-                    ->required()
-                    ->maxLength(255)
-                    ->placeholder('e.g. Cotton Shirt'),
+                Section::make('Basic Information')
+                    ->schema([
+                        TextInput::make('name')
+                            ->label('Item Name')
+                            ->required()
+                            ->maxLength(255)
+                            ->placeholder('e.g. Cotton Shirt'),
+                        TextInput::make('payout_price')
+                            ->label('Payout Price')
+                            ->required()
+                            ->numeric()
+                            ->minValue(0)
+                            ->step(0.01)
+                            ->prefix('Rs. ')
+                            ->placeholder('0.00'),
+                        TextInput::make('unit')
+                            ->label('Unit')
+                            ->required()
+                            ->datalist([
+                                'per piece',
+                                'per box',
+                                'per dozen',
+                                'per kg',
+                                'per meter',
+                                'per pack',
+                                'per set',
+                            ])
+                            ->default('per piece')
+                            ->placeholder('e.g. per piece'),
+                    ])
+                    ->columns(3),
                 FileUpload::make('image')
                     ->label('Item Image')
                     ->image()
@@ -29,28 +56,6 @@ class ItemForm
                     ->imageEditor()
                     ->maxSize(5120)
                     ->columnSpanFull(),
-                TextInput::make('payout_price')
-                    ->label('Payout Price')
-                    ->required()
-                    ->numeric()
-                    ->minValue(0)
-                    ->step(0.01)
-                    ->prefix('Rs. ')
-                    ->placeholder('0.00'),
-                TextInput::make('unit')
-                    ->label('Unit')
-                    ->required()
-                    ->datalist([
-                        'per piece',
-                        'per box',
-                        'per dozen',
-                        'per kg',
-                        'per meter',
-                        'per pack',
-                        'per set',
-                    ])
-                    ->default('per piece')
-                    ->placeholder('e.g. per piece'),
                 Textarea::make('description')
                     ->label('Description')
                     ->rows(3)
