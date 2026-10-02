@@ -16,6 +16,7 @@ class ItemForm
         return $schema
             ->components([
                 Section::make('Basic Information')
+                    ->columnSpanFull()
                     ->schema([
                         TextInput::make('name')
                             ->label('Item Name')
