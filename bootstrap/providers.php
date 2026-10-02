@@ -1,6 +1,9 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use App\Providers\Filament\KitabPanelProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\Filament\KitabPanelProvider::class,
+    AppServiceProvider::class,
+    KitabPanelProvider::class,
 ];
