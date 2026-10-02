@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e24" />
+      <stop offset="100%" stop-color="#0f0f12" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" />
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="#f59e0b" stroke-opacity="0.25" stroke-width="4" />
+
+  <!-- Inner glowing decorative shape -->
+  <g filter="url(#shadow)">
+    <!-- Main Ledger / Book Shape -->
+    <rect x="106" y="96" width="300" height="320" rx="28" fill="#27272a" stroke="#3f3f46" stroke-width="3" />
+    
+    <!-- Spine binding -->
+    <path d="M106 124 C106 108.5 118.5 96 134 96 L156 96 L156 416 L134 416 C118.5 416 106 403.5 106 388 Z" fill="url(#primaryGrad)" />
+    
+    <!-- Ledger Lines / Calculations -->
+    <line x1="184" y1="156" x2="366" y2="156" stroke="#fbbf24" stroke-width="8" stroke-linecap="round" />
+    <line x1="184" y1="200" x2="330" y2="200" stroke="#71717a" stroke-width="6" stroke-linecap="round" />
+    <line x1="184" y1="240" x2="350" y2="240" stroke="#71717a" stroke-width="6" stroke-linecap="round" />
+    <line x1="184" y1="280" x2="310" y2="280" stroke="#71717a" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Rupee / Return Icon Circle Badge -->
+    <circle cx="340" cy="340" r="54" fill="url(#primaryGrad)" filter="url(#shadow)" />
+    <!-- Currency / Checkmark Silhouette -->
+    <path d="M320 324 L360 324 M320 336 L356 336 M320 320 L320 354 C326 358 335 358 344 350 L356 364" stroke="#18181b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+</svg>
