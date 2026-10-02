@@ -51,8 +51,8 @@ class VendorPaymentResource extends Resource
     {
         return [
             'index' => ListVendorPayments::route('/'),
-            'create' => CreateVendorPayment::route('/create'),
-            'edit' => EditVendorPayment::route('/{record}/edit'),
+            // 'create' => CreateVendorPayment::route('/create'),
+            // 'edit' => EditVendorPayment::route('/{record}/edit'),
         ];
     }
 }

@@ -51,8 +51,8 @@ class ItemReturnResource extends Resource
     {
         return [
             'index' => ListItemReturns::route('/'),
-            'create' => CreateItemReturn::route('/create'),
-            'edit' => EditItemReturn::route('/{record}/edit'),
+            // 'create' => CreateItemReturn::route('/create'),
+            // 'edit' => EditItemReturn::route('/{record}/edit'),
         ];
     }
 }
