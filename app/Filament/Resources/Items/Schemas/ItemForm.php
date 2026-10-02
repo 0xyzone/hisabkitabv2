@@ -56,6 +56,9 @@ class ItemForm
                     ->visibility('public')
                     ->imageEditor()
                     ->maxSize(5120)
+                    ->previewable()
+                    ->openable()
+                    ->downloadable()
                     ->columnSpanFull(),
                 Textarea::make('description')
                     ->label('Description')
